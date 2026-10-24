@@ -1,0 +1,50 @@
+/* 风格：学术严谨 —— 教师 / 科研 / 读博申请
+   衬线字体、黑白为主、克制装饰，符合学术 CV 惯例 */
+
+body.tpl-academic {
+  --fs-name: 19pt;
+  --fs-head: 11.5pt;
+  --lh-base: 1.55;
+  --gap-section-base: 4.2mm;
+
+  --font-body: var(--font-serif);
+  --font-head: var(--font-serif);
+  --font-name: var(--font-serif);
+}
+
+body.tpl-academic .hd { text-align: center; }
+body.tpl-academic .hd .name { letter-spacing: 0.1em; font-weight: 700; }
+body.tpl-academic .hd .title { color: var(--ink-soft); font-weight: 400; letter-spacing: 0.05em; }
+body.tpl-academic .hd .contact { text-align: center; }
+body.tpl-academic .hd .rule { height: 0.6pt; background: var(--ink-mute); }
+body.tpl-academic .sec-h { justify-content: center; gap: 3mm; }
+body.tpl-academic .sec-h .t { letter-spacing: 0.16em; font-weight: 700; }
+body.tpl-academic .sec-h .bar { display: none; }
+body.tpl-academic .sec-h .rule { display: none; }
+body.tpl-academic .sec-h::before,
+body.tpl-academic .sec-h::after {
+  content: "";
+  flex: 1;
+  height: 0.6pt;
+  background: var(--rule);
+}
+body.tpl-academic .entry-h .main { font-weight: 700; }
+body.tpl-academic ul.b li::marker { color: var(--ink-mute); }
+
+/* 有照片时：居中页眉改为左右结构，照片靠右 */
+body.tpl-academic.has-photo .hd {
+  text-align: left;
+  align-items: flex-start;
+  gap: 7mm;
+}
+body.tpl-academic.has-photo .hd .name { letter-spacing: 0.06em; }
+body.tpl-academic.has-photo .hd .contact { text-align: left; }
+body.tpl-academic.has-photo .hd .rule {
+  order: 10;
+  flex-basis: 100%;
+  height: 0.6pt;
+  background: var(--rule);
+}
+body.tpl-academic.has-photo .photo img {
+  border: 0.6pt solid var(--rule);
+}

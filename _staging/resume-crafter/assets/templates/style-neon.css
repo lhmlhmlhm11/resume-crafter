@@ -1,0 +1,89 @@
+/* 风格：霓虹卡片（参考付费模板「极客」）
+   特点：
+   - 深色底板 + 顶部整幅渐变色带（靛蓝→紫），姓名反白压在上方
+   - 一寸照片嵌在色带内，用发光描边突出
+   - 分区标题为带色块的「标签」，比纯文字更有视觉锚点
+   - 兼容性：仍是单栏、纯文本优先，ATS 可解析
+   ⚠ 视觉冲击力强，建议用于作品集/设计岗；线上投递用 classic 兜底 */
+
+body.tpl-neon {
+  --fs-name: 26pt;
+  --fs-head: 12pt;
+  --gap-section-base: 3.6mm;
+  --gap-entry-base: 2.6mm;
+  --lh-base: 1.44;
+  --neon-grad: linear-gradient(115deg, var(--accent) 0%, var(--accent-2) 100%);
+}
+
+/* ---- 顶部渐变色带：出血到页面边缘 ---- */
+body.tpl-neon .hd {
+  margin: calc(var(--pad-y) * -1) calc(var(--pad-x) * -1) 5mm;
+  padding: 12mm var(--pad-x) 7mm;
+  background: var(--neon-grad);
+  align-items: flex-end;
+  gap: 7mm;
+}
+body.tpl-neon .hd .name {
+  color: var(--on-accent);
+  font-size: var(--fs-name);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0.6mm 1.6mm rgba(0, 0, 0, 0.22);
+}
+body.tpl-neon .hd .title {
+  color: var(--on-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.92;
+}
+body.tpl-neon .hd .contact {
+  color: var(--on-accent);
+  opacity: 0.9;
+}
+body.tpl-neon .hd .contact .sep { color: var(--on-accent); opacity: 0.5; }
+body.tpl-neon .hd .rule { display: none; }
+
+/* 照片：白色描边 + 轻微外发光，在深色底上浮起来 */
+body.tpl-neon .photo img {
+  border: 1.4pt solid var(--on-accent);
+  border-radius: 2.2mm;
+  box-shadow: 0 0.6mm 2.4mm rgba(0, 0, 0, 0.3);
+}
+body.tpl-neon .photo-rect img { border-radius: 2.2mm; }
+body.tpl-neon .photo-circle img { border-radius: 50%; }
+body.tpl-neon .photo-empty {
+  border-color: var(--on-accent);
+  background: rgba(255, 255, 255, 0.12);
+}
+body.tpl-neon .pt-ico { border-color: rgba(255, 255, 255, 0.75); }
+body.tpl-neon .photo-tip { color: rgba(255, 255, 255, 0.85); }
+
+/* ---- 分区标题：色块标签式 ---- */
+body.tpl-neon .sec-h {
+  background: var(--accent-soft);
+  border-radius: 1.2mm;
+  padding: 0.9mm 2.4mm;
+  margin-bottom: 2.2mm;
+  width: fit-content;
+  min-width: 34mm;
+}
+body.tpl-neon .sec-h .t {
+  color: var(--accent-text);
+  letter-spacing: 0.1em;
+}
+body.tpl-neon .sec-h .rule { display: none; }
+body.tpl-neon .sec-h .bar { display: none; }
+
+/* ---- 正文 ---- */
+body.tpl-neon .entry-h .main { font-size: 11pt; }
+body.tpl-neon .entry-h .main .org { color: var(--ink-soft); }
+body.tpl-neon .summary {
+  border-left: 1.6mm solid var(--accent);
+  padding-left: 3.4mm;
+  text-align: left;
+}
+body.tpl-neon .chip {
+  background: var(--chip-bg);
+  border-color: var(--chip-border);
+  color: var(--ink-soft);
+}
+body.tpl-neon .skills .gl { color: var(--accent-text); }

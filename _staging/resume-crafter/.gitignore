@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 构建产物
+dist/
+build/
+*.zip
+
+# 简历产物（可能含个人信息，不应入库）
+out/
+output/
+*.pdf
+*.docx
+*.doc
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.log

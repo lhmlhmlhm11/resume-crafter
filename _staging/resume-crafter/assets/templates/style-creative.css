@@ -1,0 +1,63 @@
+/* 风格：现代侧栏 + 顶部色带 —— 创意 / 设计 / 品牌岗
+   ⚠️ 同 sidebar：非 ATS 优先场景使用 */
+
+body.tpl-creative {
+  --fs-name: 25pt;
+  --fs-head: 11.5pt;
+  --gap-section-base: 4.6mm;
+}
+
+body.tpl-creative .sheet {
+  grid-template-columns: 58mm 1fr;
+  column-gap: 7.5mm;
+  align-items: start;
+}
+body.tpl-creative .hd {
+  grid-column: 1 / -1;
+  background: var(--accent);
+  margin: calc(var(--pad-y) * -1) calc(var(--pad-x) * -1) 5mm;
+  padding: var(--pad-y) var(--pad-x) 4.4mm;
+  align-items: flex-start;
+  gap: 7mm;
+}
+body.tpl-creative .hd .name { color: #fff; letter-spacing: 0.03em; }
+body.tpl-creative .hd .title { color: rgba(255, 255, 255, 0.86); }
+body.tpl-creative .hd .contact { color: rgba(255, 255, 255, 0.92); }
+body.tpl-creative .hd .contact .sep { color: rgba(255, 255, 255, 0.45); }
+body.tpl-creative .hd .rule { display: none; }
+body.tpl-creative .side {
+  grid-column: 1;
+  background: var(--panel);
+  border-left: 1.6mm solid var(--accent);
+  border-radius: 0 1.6mm 1.6mm 0;
+}
+body.tpl-creative .main { grid-column: 2; }
+body.tpl-creative .side .sec-h .t { color: var(--accent-text); }
+body.tpl-creative .side .sec-h .bar { background: var(--accent); }
+body.tpl-creative .main .sec-h .bar { display: none; }
+body.tpl-creative .main .sec-h .t {
+  padding-left: 2.6mm;
+  border-left: 1.6mm solid var(--accent);
+  line-height: 1.1;
+}
+
+/* 照片在彩色顶栏上用白框突出 */
+body.tpl-creative.has-photo .hd {
+  align-items: flex-start;
+  gap: 7mm;
+}
+body.tpl-creative.has-photo .photo img {
+  border: 1.4pt solid rgba(255, 255, 255, 0.9);
+  border-radius: 1.2mm;
+}
+body.tpl-creative.has-photo .photo-circle img { border-radius: 50%; }
+body.tpl-creative.has-photo .photo-rounded img { border-radius: 3mm; }
+body.tpl-creative.has-photo .photo-empty {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: repeating-linear-gradient(
+    -45deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14) 4px,
+    rgba(255, 255, 255, 0.05) 4px, rgba(255, 255, 255, 0.05) 8px
+  );
+}
+body.tpl-creative.has-photo .pt-ico { border-color: rgba(255, 255, 255, 0.75); }
+body.tpl-creative.has-photo .photo-tip { color: rgba(255, 255, 255, 0.85); }

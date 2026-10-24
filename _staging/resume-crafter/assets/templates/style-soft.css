@@ -1,0 +1,72 @@
+/* 风格：柔光双栏（参考付费模板「醒春」）
+   特点：
+   - 左侧浅色圆角卡片承载技能/证书/联系方式，右侧主栏承载经历
+   - 顶部姓名区用大圆角几何块包裹，不用整幅色带（比色带更轻）
+   - 照片嵌在左上角圆角框内
+   ⚠ 非 ATS 优先场景使用（双栏） */
+
+body.tpl-soft {
+  --fs-name: 24pt;
+  --fs-head: 11.5pt;
+  --gap-section-base: 4mm;
+  --gap-entry-base: 2.8mm;
+  --soft-card: 3mm;
+}
+
+body.tpl-soft .sheet {
+  grid-template-columns: 62mm 1fr;
+  column-gap: 8mm;
+  align-items: start;
+}
+
+/* ---- 顶部姓名区：圆角几何块 ---- */
+body.tpl-soft .hd {
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 8mm;
+  padding: 5mm 6mm;
+  margin-bottom: 5mm;
+  background: var(--panel);
+  border-radius: var(--soft-card);
+  border: 0.6pt solid var(--accent-line);
+}
+body.tpl-soft .hd .name {
+  font-size: var(--fs-name);
+  letter-spacing: 0.05em;
+}
+body.tpl-soft .hd .title {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+body.tpl-soft .hd .contact { font-size: 9.5pt; }
+body.tpl-soft .hd .rule { display: none; }
+body.tpl-soft .hd .photo { order: -1; }
+body.tpl-soft .photo img {
+  border-radius: 2.2mm;
+  border: 0.8pt solid var(--accent-line);
+}
+
+/* ---- 左右两栏都是圆角卡片 ---- */
+body.tpl-soft .side {
+  grid-column: 1;
+  background: var(--panel);
+  border-radius: var(--soft-card);
+  border: 0.6pt solid var(--accent-line);
+  padding: 4.4mm 4mm;
+}
+body.tpl-soft .main { grid-column: 2; }
+body.tpl-soft .side .sec-h .bar { background: var(--accent); height: 3.4mm; }
+body.tpl-soft .side .sec-h .rule { display: none; }
+body.tpl-soft .side .sec-h .t { color: var(--accent-text); }
+body.tpl-soft .main .sec-h .bar { display: none; }
+body.tpl-soft .main .sec-h .t {
+  padding-left: 2.6mm;
+  border-left: 1.6mm solid var(--accent);
+  line-height: 1.1;
+}
+body.tpl-soft .side .chip {
+  background: var(--paper-bg);
+  border-color: var(--chip-border);
+  font-size: 9pt;
+}
+body.tpl-soft .side-photo { margin-bottom: 3.6mm; }

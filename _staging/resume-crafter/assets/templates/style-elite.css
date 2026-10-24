@@ -1,0 +1,98 @@
+/* 风格：精英几何 —— 参考 Canva / 五百丁付费模板的「几何色块 + 照片」语言
+   特点：
+   - 页眉右侧一寸照片，左侧姓名与身份标签
+   - 姓名下方几何斜切色块（付费模板常见做法，用 CSS 渐变实现，无图片）
+   - 分区标题带浅底色块，视觉锚点强
+   - 胶囊技能标签 + 分组细分隔
+   兼容性：仍是单栏、纯文本优先，ATS 可解析 */
+
+body.tpl-elite {
+  --fs-name: 23pt;
+  --fs-head: 12pt;
+  --gap-section-base: 4.4mm;
+  --gap-entry-base: 3.2mm;
+  --lh-base: 1.5;
+}
+
+/* ---- 页眉：左文字 + 右照片 ---- */
+body.tpl-elite .hd {
+  position: relative;
+  gap: 7mm;
+  align-items: flex-start;
+  margin-bottom: 2.6mm;
+}
+body.tpl-elite .hd .name {
+  font-size: var(--fs-name);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+/* 姓名下方的几何斜切色块：用 linear-gradient 切出平行四边形 */
+body.tpl-elite .hd .name::after {
+  content: "";
+  display: block;
+  height: 2.2mm;
+  width: 34mm;
+  margin-top: 1.4mm;
+  background: linear-gradient(100deg, var(--accent) 0 72%, var(--accent-soft) 72% 100%);
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+}
+body.tpl-elite .hd .title {
+  color: var(--accent-text);
+  font-weight: 600;
+  font-size: 10.5pt;
+  letter-spacing: 0.04em;
+}
+body.tpl-elite .hd .contact {
+  margin-top: 1.6mm;
+  font-size: 9.5pt;
+}
+body.tpl-elite .hd .rule {
+  order: 10;
+  flex-basis: 100%;
+  height: 0.8pt;
+  background: var(--accent-line);
+  margin-top: 2.2mm;
+}
+
+/* 照片：加细描边，与几何风格呼应 */
+body.tpl-elite .photo img {
+  border: 0.8pt solid var(--accent-line);
+}
+body.tpl-elite .photo-rect img { border-radius: 1.2mm; }
+body.tpl-elite .photo-circle img { border-radius: 50%; }
+
+/* ---- 分区标题带 ---- */
+body.tpl-elite .sec-h .t {
+  letter-spacing: 0.06em;
+  color: var(--accent-text);
+}
+body.tpl-elite .sec-h .bar {
+  display: none;
+}
+body.tpl-elite .sec-h .rule {
+  height: 0.5pt;
+  background: var(--accent-line);
+}
+
+/* ---- 条目 ---- */
+body.tpl-elite .entry-h .main { font-size: 11pt; }
+body.tpl-elite .entry-h .main .org { color: var(--ink-soft); }
+body.tpl-elite ul.b li::marker { color: var(--accent-text); }
+
+/* ---- 技能胶囊 ---- */
+body.tpl-elite .skills .gl {
+  color: var(--accent-text);
+  font-size: 10pt;
+}
+body.tpl-elite .chip {
+  background: var(--chip-bg);
+  border-color: var(--chip-border);
+  color: var(--ink-soft);
+}
+
+/* ---- 摘要：加左侧强调竖线 ---- */
+body.tpl-elite .summary {
+  border-left: 1.6mm solid var(--accent-soft);
+  padding-left: 3.4mm;
+  text-align: left;
+}

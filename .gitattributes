@@ -1,0 +1,21 @@
+# 统一换行策略，避免跨平台协作产生无意义 diff。
+# 默认：文本文件在仓库内以 LF 存储，检出时按平台转换（Windows → CRLF）。
+* text=auto
+
+# 脚本与配置：仓库内固定 LF（Windows 下也保持 LF）
+*.py   text eol=lf
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.css  text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+
+# 二进制，禁止换行转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.pdf  binary
+*.docx binary
+*.zip  binary

@@ -1,0 +1,37 @@
+/* 风格：现代单栏 —— 互联网 / 产品 / 运营岗
+   无衬线字体、左侧细色条、强调色标题，信息密度高但仍为单栏 */
+
+body.tpl-modern {
+  --fs-name: 24pt;
+  --fs-head: 12pt;
+  --gap-section-base: 4.8mm;
+}
+
+body.tpl-modern .hd { text-align: left; }
+body.tpl-modern .hd .name { letter-spacing: 0.02em; }
+body.tpl-modern .hd .title { font-weight: 600; }
+body.tpl-modern .hd .rule {
+  height: 2.6pt;
+  width: 26mm;
+  margin-top: 2.8mm;
+  border-radius: 1.3pt;
+}
+body.tpl-modern .sec-h .t { letter-spacing: 0.02em; }
+body.tpl-modern .entry-h .main { font-size: 11pt; }
+body.tpl-modern .sec-h .rule { background: var(--accent-soft); height: 1pt; }
+
+/* 有照片时：页眉左右分栏，照片靠右 */
+body.tpl-modern.has-photo .hd {
+  align-items: flex-start;
+  gap: 7mm;
+}
+body.tpl-modern.has-photo .hd .rule {
+  order: 10;
+  flex-basis: 100%;
+  width: 100%;
+  height: 2.6pt;
+}
+body.tpl-modern.has-photo .photo img {
+  border-radius: 1.6mm;
+  border: 0.6pt solid var(--accent-line);
+}

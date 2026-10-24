@@ -1,0 +1,79 @@
+/* 风格：几何圆角（参考付费模板「浅熏」）
+   特点：
+   - 浅色底 + 大圆角分区卡片，卡片之间留白充足
+   - 分区标题用「彩色实心胶囊」而非色条，视觉锚点最强
+   - 照片为大圆角（squircle）造型
+   - 兼容性：单栏纯文本，ATS 可解析 */
+
+body.tpl-geo {
+  --fs-name: 25pt;
+  --fs-head: 12pt;
+  --gap-section-base: 4.4mm;
+  --gap-entry-base: 2.8mm;
+  --geo-radius: 4mm;
+  --geo-card-bg: var(--card-bg);
+}
+
+body.tpl-geo .hd {
+  align-items: center;
+  gap: 8mm;
+  margin-bottom: 5mm;
+  padding-bottom: 4mm;
+  border-bottom: 1.6mm solid var(--accent);
+}
+body.tpl-geo .hd .name {
+  font-size: var(--fs-name);
+  letter-spacing: 0.06em;
+}
+body.tpl-geo .hd .title {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+body.tpl-geo .hd .rule { display: none; }
+body.tpl-geo .photo img {
+  border-radius: var(--geo-radius);
+  border: 1pt solid var(--accent-line);
+}
+body.tpl-geo .photo-rect img { border-radius: var(--geo-radius); }
+body.tpl-geo .photo-circle img { border-radius: 50%; }
+
+/* ---- 分区做成大圆角卡片 ---- */
+body.tpl-geo .sec {
+  background: var(--geo-card-bg);
+  border-radius: var(--geo-radius);
+  padding: 3.4mm 4mm 3mm;
+}
+body.tpl-geo .sec.first { padding-top: 3.4mm; }
+
+/* ---- 分区标题：实心胶囊 ---- */
+body.tpl-geo .sec-h {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2.6mm;
+  gap: 0;
+}
+body.tpl-geo .sec-h .t {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 10.5pt;
+  letter-spacing: 0.12em;
+  padding: 0.9mm 3.2mm;
+  border-radius: 6mm;
+}
+body.tpl-geo .sec-h .rule { display: none; }
+body.tpl-geo .sec-h .bar { display: none; }
+
+body.tpl-geo .entry-h .main { font-size: 11pt; }
+body.tpl-geo .entry-h .main .org { color: var(--ink-soft); }
+body.tpl-geo .summary {
+  background: var(--geo-card-bg);
+  border-radius: var(--geo-radius);
+  padding: 3mm 4mm;
+  text-align: left;
+}
+body.tpl-geo .chip {
+  background: var(--paper-bg);
+  border-color: var(--chip-border);
+  color: var(--ink-soft);
+}
+body.tpl-geo .skills .gl { color: var(--accent-text); }

@@ -1,0 +1,8 @@
+interface:
+  display_name: "简历工坊 Resume Crafter"
+  short_description: "口述经历即生成精美 ATS 简历，可按岗位 JD 定制"
+  brand_color: "#1F3A5F"
+  default_prompt: "使用 $resume-crafter 帮我做一份简历。我会口述我的学习和工作经历，请先补齐缺失信息（时间、量化成果），再生成排版精美、可过 ATS 机筛的简历，并针对目标岗位 JD 做定制。"
+
+policy:
+  allow_implicit_invocation: true

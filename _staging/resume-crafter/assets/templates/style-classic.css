@@ -1,0 +1,46 @@
+/* 风格：经典 ATS 单栏 —— 默认风格，90% 场景适用
+   单栏自上而下、标准分区名、无装饰图标，机筛解析零风险
+   视觉增强：页眉左右分栏容纳一寸照片，标题用色块 + 细线 */
+
+body.tpl-classic {
+  --fs-name: 21pt;
+  --fs-head: 12.5pt;
+  --font-body: var(--font-sans);
+  --font-head: var(--font-sans);
+  --font-name: var(--font-sans);
+}
+
+body.tpl-classic .hd { text-align: center; }
+body.tpl-classic .hd .name { letter-spacing: 0.14em; }
+body.tpl-classic .hd .title { font-weight: 500; color: var(--ink-soft); letter-spacing: 0.06em; }
+body.tpl-classic .hd .contact { text-align: center; }
+body.tpl-classic .sec-h .t { text-transform: none; }
+
+/* 经典风格的分区标题：左侧色条 + 细横线 */
+body.tpl-classic .sec-h .bar { display: none; }
+body.tpl-classic .sec-h .t {
+  padding-left: 2.6mm;
+  border-left: 1.6mm solid var(--accent);
+  line-height: 1.1;
+}
+
+/* ---- 有照片时的页眉布局 ----
+   无照片：整页居中，经典稳重
+   有照片：文字左对齐 + 右侧照片，兼顾证件照岗位需求 */
+body.tpl-classic.has-photo .hd {
+  text-align: left;
+  align-items: flex-start;
+  gap: 7mm;
+}
+body.tpl-classic.has-photo .hd .name { letter-spacing: 0.06em; }
+body.tpl-classic.has-photo .hd .contact { text-align: left; }
+body.tpl-classic.has-photo .hd .rule {
+  order: 10;
+  flex-basis: 100%;
+  height: 1pt;
+  background: var(--accent);
+  margin-top: 3.2mm;
+}
+body.tpl-classic.has-photo .photo img {
+  border: 0.6pt solid var(--accent-line);
+}

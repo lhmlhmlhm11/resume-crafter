@@ -1,0 +1,40 @@
+/* 风格：双栏侧边栏 —— 设计师 / 产品经理 / 市场岗
+   ⚠️ 部分 ATS 会跨栏读取导致顺序错乱，此风格仅用于「直接给人看」的投递场景
+   Skill 会强制同时产出一份 classic 单栏版作为投递兜底 */
+
+body.tpl-sidebar {
+  --fs-name: 23pt;
+  --fs-head: 11.5pt;
+  --gap-section-base: 4.4mm;
+}
+
+body.tpl-sidebar .sheet {
+  grid-template-columns: 64mm 1fr;
+  column-gap: 8mm;
+  align-items: start;
+}
+body.tpl-sidebar .hd {
+  grid-column: 1 / -1;
+  margin-bottom: 5mm;
+  padding-bottom: 3.4mm;
+  border-bottom: 1.2pt solid var(--accent);
+}
+body.tpl-sidebar .hd .name { font-size: var(--fs-name); }
+body.tpl-sidebar .hd .title { color: var(--accent-text); font-weight: 600; }
+body.tpl-sidebar .hd .contact { font-size: 9.5pt; }
+body.tpl-sidebar .hd .rule { display: none; }
+body.tpl-sidebar .side { grid-column: 1; }
+body.tpl-sidebar .main { grid-column: 2; }
+body.tpl-sidebar .side .sec-h .bar { background: var(--accent); }
+body.tpl-sidebar .main .sec-h .bar { display: none; }
+body.tpl-sidebar .main .sec-h .t {
+  padding-left: 2.6mm;
+  border-left: 1.6mm solid var(--accent);
+  line-height: 1.1;
+}
+
+/* 有照片时：照片置于左侧面板顶部，与姓名区视觉聚合 */
+body.tpl-sidebar.has-photo .side-photo { margin-bottom: 3.4mm; }
+body.tpl-sidebar.has-photo .photo img {
+  border: 0.8pt solid var(--accent-line);
+}
