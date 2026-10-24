@@ -1,0 +1,39 @@
+{
+  "name": "resume-crafter",
+  "version": "0.1.1",
+  "description": "简历工坊 — Agent Skill：口述经历 → 可投递简历 → JD 定制 → 投递体检 → 面试准备",
+  "type": "module",
+  "license": "MIT",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "cordis.patch.yml",
+    "_staging",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "skills",
+    "resume",
+    "career",
+    "ats"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lhmlhmlhm11/resume-crafter.git"
+  }
+}

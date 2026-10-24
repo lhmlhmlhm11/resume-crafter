@@ -150,6 +150,18 @@ pillow>=10.0.0         # 可选：仅生成示例证件照时需要
 <项目>/.workbuddy/skills/resume-crafter/    # 项目级
 ```
 
+### DeepSeek Harness 一键安装
+
+本仓库同时是一个标准的 **DSH 组合包（bundle）**，声明了 `dsh.bundle`，可直接用 `dsh plugin` 安装：
+
+```bash
+dsh plugin --profile web add github:lhmlhmlhm11/resume-crafter
+```
+
+安装后重启 `dsh web`，组合包会注册一个 FileSystemSkillProvider，把 `resume-crafter` 技能加入技能发现列表（与你已有的项目级/用户级技能并存，不会覆盖）。在对话里即可调用；也可用 `/resume-crafter` 直达。
+
+> 安装要求：`dsh >= 0.1.0-rc.6`。包内不含 `@deepseek-ai/*` 依赖，官方包由 profile 启动闭包注入。
+
 ---
 
 ## 四、使用方法

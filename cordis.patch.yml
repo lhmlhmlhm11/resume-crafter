@@ -1,0 +1,5 @@
+# DSH bundle profile patch.
+# Install: dsh plugin --profile web add github:lhmlhmlhm11/resume-crafter
+- insert:
+    - id: resume-crafter
+      name: 'resume-crafter'
